@@ -28,7 +28,7 @@ TAG_CHOICES = getattr(
 
 # Models
 
-class TaccsiteSection(CMSPlugin):
+class TaccsiteSection(Style):
     """
     Patterns > "Section" Model
     https://confluence.tacc.utexas.edu/x/c5TtDg
