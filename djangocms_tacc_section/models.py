@@ -28,19 +28,7 @@ TAG_CHOICES = getattr(
 
 # Models
 
-class AbstractStyle(Style):
-    class Meta:
-        abstract = True
+class TaccsiteSection(Style):
+    pass
 
-class TaccsiteSection(AbstractStyle):
-    """
-    Patterns > "Section" Model
-    https://confluence.tacc.utexas.edu/x/c5TtDg
-    """
-    class_name = models.CharField(
-        verbose_name=_('Class name'),
-        choices=CLASS_CHOICES,
-        default=CLASS_CHOICES[0][0],
-        blank=True,
-        max_length=255,
-    )
+TaccsiteSection._meta.get_field('class_name').choices = CLASS_CHOICES
