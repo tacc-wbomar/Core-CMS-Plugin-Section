@@ -14,7 +14,7 @@ class TaccsiteSectionPlugin(StylePlugin):
     https://confluence.tacc.utexas.edu/x/c5TtDg
     """
     module = 'TACC Site'
-    model = TaccsiteSection
+    # model = TaccsiteSection
     name = _('Section')
 
     # Copied from djangocms_style sans 'Inline style settings'
