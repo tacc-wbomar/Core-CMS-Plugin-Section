@@ -20,38 +20,60 @@ After cloning this repository for your plugin:
 
 1. Follow https://github.com/tacc-wbomar/Core-CMS-Plugin/wiki/Core-CMS-Plugin-Usage-Quick-Start.
 
-> The next steps are sample steps that should be replaced with plugin-specific steps, if any.
+2. (Optional) Add properties and values to your Django project's settings.
 
-2. Any step that is specific to the plugin, such as the steps after this.
+    - __`DJANGOCMS_TACCSITE_SECTION_TAGS`__
 
-    ```
-    # provide minimal example code that may help the reader
-    ```
+        A list of tags from which the user can choose one to be the element of the wrapper.
 
-3. Add a URLconf in your Django project's `urls.py` like this:
+        ```python
+        DJANGOCMS_TACCSITE_SECTION_TAGS = [
+            'section', 'article', 'header', 'footer', 'aside', 'div'
+        ]
+        ```
 
-    ```
-        url(r'^sysmon/', include('__package_name__.urls')),
-    ```
+    - __`DJANGOCMS_TACCSITE_SECTION_CLASSNAMES_CONSTANT`__
 
-4. Add `__PLUGIN_NAME_SOME_PROP__` property and value to your Django project's settings:
+        A string of classes which will alwyas be added to each wrapper.
 
-    ```
-    __PLUGIN_NAME_SOME_PROP__ = 'specific_value'
-    ```
+        ```python
+        # (Generic Example)
+        DJANGOCMS_TACCSITE_SECTION_CLASSNAMES_CONSTANT = '_example_tacc_section_class_constant'
+        ```
 
-5. Visit [http://your.project.url.host/some-plugin-url-path/](http://127.0.0.1:8000/ "The URL for your environment may be different than this.").
+        ```python
+        # (Specific Example)
+        DJANGOCMS_TACCSITE_SECTION_CLASSNAMES_CONSTANT = 'o-section  some-other-constant'
+        ```
+
+    - __`DJANGOCMS_TACCSITE_SECTION_CLASSNAMES_CHOICES`__
+
+        A list of classes from which the user can choose one to be added to the wrapper.
+
+        ```python
+        # (Generic Example)
+        DJANGOCMS_TACCSITE_SECTION_CLASSNAMES_CHOICES = [
+            ('_example_tacc_section_class_a', 'Example Class A'),
+            ('_example_tacc_section_class_b', 'Example Class B'),
+        ]
+        ```
+
+        ```python
+        # (Specific Example)
+        DJANGOCMS_TACCSITE_SECTION_CLASSNAMES_CHOICES = [
+            ('o-section--style-light', 'Light Background, Dark Text'),
+            ('o-section--style-dark', 'Dark Background, Light Text'),
+        ]
+        ```
 
 ## Usage
 
-> This section is sample usage steps that should be replaced with plugin-specific steps, or be removed.
-
 1. Add instance of plugin to a page.
 1. Configure the plugin instance.
-1. See plugin render content that matches configuration.
+1. (Optional) Add and nest plugin instances to support content inside.
+1. See plugin render markup that matches configuration (and wraps nested plugin content).
 
 ## Features
 
-> This section should describe the feature of the plugin or be removed.
-
-…
+1. Renders HTML element and classnames (as configured).
+1. Renders nested plugin instances to wrap content.
