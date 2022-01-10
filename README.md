@@ -1,12 +1,12 @@
 ## Texas Advanced Computing Center
-# Django CMS Plugin: "The Example"
+# Django CMS Plugin: "Section"
 
-This plugin [does something].
+This plugin creates a customizable "Section" (`<section>`) wrapper.
 
-- __`__dist-name__`__: `djangocms-tacc-the-example`
-- __`__package_name__`__: `djangocms_tacc_the_example`
-- __`__ClassName__`__: `TaccsiteTheExample`
-- __"Plugin Name"__: "The Example"
+- __`__dist-name__`__: `djangocms-tacc-section`
+- __`__package_name__`__: `djangocms_tacc_section`
+- __`__ClassName__`__: `TaccsiteSection`
+- __"Plugin Name"__: "Section"
 
 ## For Plugin Developer
 
