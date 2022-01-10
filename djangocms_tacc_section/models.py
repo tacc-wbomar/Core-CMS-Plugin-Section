@@ -28,11 +28,7 @@ TAG_CHOICES = getattr(
 
 # Models
 
-class AbstractStyle(Style):
-    class Meta:
-        abstract = True
-
-class TaccsiteSection(AbstractStyle):
+class TaccsiteSection(Style):
     """
     Patterns > "Section" Model
     https://confluence.tacc.utexas.edu/x/c5TtDg
