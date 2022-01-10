@@ -3,8 +3,6 @@ from djangocms_style.models import Style
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from taccsite_cms.contrib.helpers import get_choices
-
 # Constants
 
 CLASS_BASE = getattr(
