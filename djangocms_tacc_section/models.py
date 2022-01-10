@@ -41,7 +41,7 @@ class TaccsiteSection(Style):
     #     max_length=255,
     # )
 
-#     class Meta:
-#         proxy = True
+    class Meta:
+        proxy = True
 
-# TaccsiteSection._meta.get_field('name').max_length = 255
+TaccsiteSection._meta.get_field('class_name').choices = CLASS_CHOICES
