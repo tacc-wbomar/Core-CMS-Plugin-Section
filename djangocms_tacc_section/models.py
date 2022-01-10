@@ -1,3 +1,5 @@
+from django.conf import settings
+
 from djangocms_style.models import Style
 
 from django.db import models
