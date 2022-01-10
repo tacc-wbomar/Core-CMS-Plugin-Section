@@ -33,15 +33,14 @@ class TaccsiteSection(Style):
     Patterns > "Section" Model
     https://confluence.tacc.utexas.edu/x/c5TtDg
     """
-    # class_name = models.CharField(
-    #     verbose_name=_('Class name'),
-    #     choices=CLASS_CHOICES,
-    #     default=CLASS_CHOICES[0][0],
-    #     blank=True,
-    #     max_length=255,
-    # )
+    custom_class_name = models.CharField(
+        verbose_name=_('Class name'),
+        choices=CLASS_CHOICES,
+        default=CLASS_CHOICES[0][0],
+        blank=True,
+        max_length=255,
+    )
 
-    class Meta:
-        proxy = True
-
-TaccsiteSection._meta.get_field('class_name').choices = CLASS_CHOICES
+    def save(self, force_insert=False, force_update=False):
+        self.class_name = self.custom_class_name
+        super(Style, self).save(force_insert, force_update)
