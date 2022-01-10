@@ -31,4 +31,4 @@ TAG_CHOICES = getattr(
 class TaccsiteSection(Style):
     pass
 
-TaccsiteSection._meta.get_field('class_name').choices = CLASS_CHOICES
+# TaccsiteSection._meta.get_field('class_name').choices = CLASS_CHOICES
