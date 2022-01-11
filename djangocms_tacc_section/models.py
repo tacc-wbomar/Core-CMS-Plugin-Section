@@ -25,22 +25,35 @@ TAG_CHOICES = getattr(
     'DJANGOCMS_TACCSITE_SECTION_TAGS',
     ['section', 'article', 'header', 'footer', 'aside', 'div'],
 )
+TAG_CHOICES = tuple((entry, entry) for entry in TAG_CHOICES)
 
 # Models
 
+# This inheritence causes django-cms/django-cms#5913
+# SEE: https://github.com/django-cms/django-cms/issues/5913
+# FAQ: No `AbstractStyle` exists
+# NOTE: Possible solution might be custom `cmsplugin_ptr`
+# SEE: https://github.com/django-cms/djangocms-style/blob/315e8ef/djangocms_style/models.py#L137-L146
 class TaccsiteSection(Style):
     """
     Patterns > "Section" Model
     https://confluence.tacc.utexas.edu/x/c5TtDg
     """
     custom_class_name = models.CharField(
-        verbose_name=_('Class name'),
+        verbose_name=_('Style'),
         choices=CLASS_CHOICES,
         default=CLASS_CHOICES[0][0],
-        blank=True,
+        blank=False,
+        max_length=255,
+    )
+    custom_tag_type = models.CharField(
+        verbose_name=_('Tag'),
+        choices=TAG_CHOICES,
+        default=TAG_CHOICES[0][0],
         max_length=255,
     )
 
-    def save(self, force_insert=False, force_update=False):
+    def save(self, *args, **kwargs):
         self.class_name = self.custom_class_name
-        super(Style, self).save(force_insert, force_update)
+        self.tag_type = self.custom_tag_type
+        super().save(*args, **kwargs)

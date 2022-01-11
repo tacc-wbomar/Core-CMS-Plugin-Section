@@ -22,7 +22,7 @@ setup(
     install_requires=[
         'Django>=2.2.16',
         'django-cms>=3.7.4',
-        'djangocms-style>=3.0.0'
+        'djangocms-style~=3.0'
     ],
     # SEE: https://pypi.org/classifiers/
     classifiers=[
