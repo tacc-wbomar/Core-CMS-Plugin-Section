@@ -8,14 +8,6 @@ This plugin creates a customizable "Section" (`<section>`) wrapper.
 - __`__ClassName__`__: `TaccsiteSection`
 - __"Plugin Name"__: "Section"
 
-## For Plugin Developer
-
-After cloning this repository for your plugin:
-
-1. Follow https://github.com/tacc-wbomar/Core-CMS-Plugin/wiki/Core-CMS-Plugin-Development-Quick-Start.
-2. Remove this section from your repository's `README.md`.
-
-
 ## Quick Start
 
 1. Follow https://github.com/tacc-wbomar/Core-CMS-Plugin/wiki/Core-CMS-Plugin-Usage-Quick-Start.
